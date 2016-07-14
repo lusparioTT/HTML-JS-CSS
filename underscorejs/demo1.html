@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+	<script src="http://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+</head>
+<body>
+	<div id="container">		
+<!-- <li><%=content.title %></li> <li><%=content.rank %></li> -->
+	</div>
+	<button onclick="showTemplate();">显示模板内容</button>
+	<script type="text/html" id="tpl">
+		
+		<ul>
+
+			
+			<li>ss</li> <li>ss</li>
+		</ul>
+		
+	</script>
+
+	<script type="text/javascript">
+		
+		(function(){
+
+			//alert(_);
+
+		})();
+
+		function showTemplate(){
+			var content={title:"Java",rank:"NO.1"};
+			var doc = document.getElementById("container");
+			//_.template("tpl",content);
+			//var compiled = _.template(document.getElementById("tpl").innerHTML);
+			var compiled = _.template(document.getElementById("tpl").innerHTML);
+			//doc.innerHTML = _.template("tpl",{"content":content});
+			//var html = compiled({"content":content});
+			var html = compiled();
+			doc.innerHTML = html;
+			//doc.innerHTML = compiled;
+		}
+	</script>
+</body>
+</html>
+

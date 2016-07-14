@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<title>Jquery Api 练习</title>
+	<meta charset="utf-8">
+	<script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+	//1
+	function load(){
+		console.log('print from window.onload prop ...')
+	};
+	window.onload = load;
+	//2
+	var documentReady = function whenOnLoad(){
+		console.log('print from body onload func documentReady()...');
+	};
+	//3
+	$(document).ready(function(){
+		console.log('print in $(document).ready() ...')
+	});
+	//4
+	jQuery(function($){
+		console.log('print in Jquery(function($){}) ...')
+	});
+	//5
+	$(function(){
+		console.log('print in $(function(){}) ...');
+	});
+	</script>
+</head>
+<body onload="documentReady()">
+	<!-- Jquery val() attr() prop() -->
+	语言：<input type="text" id="input1" name="" value="java"></input>
+	国家：<input type="text" id="input2" name="" value="美国"></input>
+	测试：<input type="button" value="确定" onclick="showOut20160714()"></input>
+	<script type="text/javascript">
+		function showOut20160714(){
+			console.log($('#input1').val());
+			console.log($('#input1').attr('value'));
+			console.log($('#input1').prop('value'));
+		}
+	</script>
+	<!-- end-->
+
+	
+
+
+</body>
+</html>

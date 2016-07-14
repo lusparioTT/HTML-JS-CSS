@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="http://cdn.bootcss.com/react/15.1.0/react.min.js"></script>
+	<script src="http://cdn.bootcss.com/react/15.1.0/react-dom.min.js"></script>
+	<script src="http://cdn.bootcss.com/babel-core/5.8.34/browser.min.js"></script>
+	<!-- babel-core 6.x.x not work-->
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+		//设置文档标题
+		document.title = "react - hello world";
+	</script>
+</head>
+<body>
+		<div id="container"></div>
+		<div id="div1"></div>
+		<div id="div3"></div>
+
+		<script type="text/babel">
+		//--渲染dom元素
+			ReactDOM.render(<h>Hello, hhh</h>,document.getElementById("container"));
+			
+			//---解析html javasript
+			var names = ["可乐","佳得乐","爪哇咖啡"];
+			ReactDOM.render(
+			<ul>
+				{
+					names.map(function(name){
+						return <li>我爱喝，{name}！</li>
+					})
+				}
+			</ul>,document.getElementById("div1"));
+		//----------
+			var titles3=[<h1>标题一</h1>,<h2>标题二</h2>];
+			ReactDOM.render(<p>{titles3}</p>,document.getElementById('div3'));
+		</script>
+
+</body>
+</html>
