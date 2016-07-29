@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Variable Laboratory</title>
+    <link rel="stylesheet" href="">
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/typed.js"></script>
+    <style type="text/css">
+    textarea#result_textarea {
+        /*Remove the Blue glow*/
+        outline: none;
+        /*remove resize handle*/
+        resize: none;
+        margin-top: 3px;
+    }
+    
+    #tt1_div textarea {
+        resize: none;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    div#tt1_div {
+        position: relative;
+        width: auto;
+        height: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    div#tt1_div,
+    div#tt1_div textarea {
+        font-family: arial;
+        font-size: 1em;
+        padding: 10px;
+    }
+    
+    div.Qing_Shu {
+        margin-top: 50px;
+    }
+    
+    div.Qing_Shu pre {
+        font-family: arial;
+        font-size: 2em;
+    }
+    
+    .typed-cursor {
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <input id="keyInput" type="text"></input>
+    <button onclick="get()">show</button>
+    <br>
+    <textarea id="result_textarea" placeholder="Remember, be nice! Blue glow is removed" cols="30" rows="5"></textarea>
+    <script type="text/javascript">
+    var get = function() {
+        var emt_input = document.getElementById('keyInput'),
+            key;
+        if (emt_input.value == "") {
+            return;
+        }
+        key = emt_input.value;
+        document.getElementById('result_textarea').value = window[key];
+    };
+
+    function showVariable() {
+        var keys = Object.getOwnPropertyNames(window),
+            key, value;
+        var counter = 0;
+        for (var i = 0; i < keys.length; ++i) {
+            //count
+            ++counter;
+            key = keys[i];
+            value = window[keys[i]];
+
+            console.log(key + " : " + value);
+        }
+        console.log(counter + " variables")
+    }
+    </script>
+    <!-- Html Autoresize Textarea Example -->
+    <!-- remove resize handle-->
+    <div id="tt1_div">
+        <textarea id="tt1"></textarea>
+    </div>
+    <script type="text/javascript">
+    (function() {
+        var d = document,
+            c = d.getElementById('tt1_div'),
+            t = d.getElementById('tt1'),
+            f = d.createTextNode('');
+
+        c.appendChild(f);
+
+        function updateSize() {
+            f.nodeValue = t.value + '\n\n';
+        }
+
+        t.onkeypress = t.onkeyup = t.onchange = updateSize;
+
+        updateSize();
+    })();
+    </script>
+    <hr>
+    <!-- Type Writer Effect -->
+    <script type="text/javascript">
+    $(function() {
+        $("#typed").typed({
+            stringsElement: $('.Qing_Shu'),
+            //typing speed
+            typeSpeed: 50,
+            // time before typing starts
+            startDelay: 3,
+            // backspacing speed
+            backSpeed: 20,
+            // shuffle the strings
+            shuffle: false,
+            // time before backspacing
+            backDelay: 500
+        });
+    });
+    </script>
+    <div class="Qing_Shu">
+        <pre>
+                        情书 <br>
+                        专辑：友情歌 1995-2000世纪情歌金选<br>
+                        歌手：张学友<br>
+                        来源：张学友<br>
+                        作曲 : 戚小恋<br>
+
+                        作词 : 姚若龙<br>
+
+                        你瘦了憔悴得让我好心疼<br>
+
+                        有时候爱情比时间还残忍<br>
+
+                        把人变得盲目而奋不顾身<br>
+
+                        忘了爱要两个同样用心的人<br>
+
+                        你醉了脆弱得藏不住泪痕<br>
+
+                        我知道绝望比冬天还寒冷<br>
+
+                        你恨自己是个怕孤独的人<br>
+
+                        偏偏又爱上自由自私的灵魂<br>
+
+                        你带着它唯一写过的情书<br>
+
+                        想证明当初爱得并不糊涂<br>
+
+                        他曾为了你的逃离颓废痛苦<br>
+
+                        也为了破镜重圆抱着你哭<br>
+
+                        哦 可惜爱不是几滴眼泪几封情书 哦---<br>
+
+                        这样的话也许有点残酷<br>
+
+                        等待着别人给幸福的人<br>
+
+                        往往过的都不怎么幸福<br>
+
+                        哦 可惜爱不是忍着眼泪留着情书 哦---<br>
+
+                        伤口清醒要比昏迷痛楚<br>
+
+                        禁闭着双眼又拖着错误<br>
+
+                        真爱来临时你要怎么留得住<br>
+
+                        你醉了脆弱得藏不住泪痕<br>
+
+                        我知道绝望比冬天还寒冷<br>
+
+                        你恨自己是个怕孤独的人<br>
+
+                        偏偏又爱上自由自私的灵魂<br>
+
+                        你带着它唯一写过的情书<br>
+
+                        想证明当初爱得并不糊涂<br>
+
+                        他曾为了你的逃离颓废痛苦<br>
+
+                        也为了破镜重圆抱着你哭<br>
+
+                        哦 可惜爱不是几滴眼泪几封情书 哦---<br>
+
+                        这样的话也许有点残酷<br>
+
+                        等待着别人给幸福的人<br>
+
+                        往往过的都不怎么幸福<br>
+
+                        哦 可惜爱不是忍着眼泪留着情书 哦---<br>
+
+                        伤口清醒要比昏迷痛楚<br>
+
+                        禁闭着双眼又拖着错误<br>
+
+                        真爱来临时你要怎么留得住<br>
+    </pre>
+    </div>
+    <div style="margin-top: 50px;">
+        <span id="typed"></span>
+    </div>
+</body>
+
+</html>
